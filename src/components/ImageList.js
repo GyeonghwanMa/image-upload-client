@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 import { ImageContext } from "../context/ImageContext";
 import "./ImageList.css";
+import Image from "./Image";
 
 const ImageList = () => {
   const {
@@ -38,9 +39,8 @@ const ImageList = () => {
       to={`/images/${image._id}`}
       ref={index + 5 === images.length ? elementRef : undefined}
     >
-      <img
-        alt=""
-        src={`https://image-upload-tutorial-ma.s3.ap-northeast-2.amazonaws.com/raw/${image.key}`}
+      <Image
+        imageUrl={`https://dxcfddwb91g0d.cloudfront.net/w140/${image.key}`}
       />
     </Link>
   ));
